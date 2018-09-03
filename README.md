@@ -1,14 +1,13 @@
 # Openbox-config
-![](/home/lihaidong/openbox/Openbox-config/截图_2018-07-28_13-32-18.png)
+![](截图_2018-07-28_13-32-18.png)
 
-![](/home/lihaidong/openbox/Openbox-config/截图_2018-07-28_13-33-08.png)
+![](截图_2018-07-28_13-33-08.png)
 
-![](/home/lihaidong/openbox/Openbox-config/截图_2018-08-01_03-09-58.png)
+![](截图_2018-08-01_03-09-58.png)
 
 
 
 这是我的Openbox桌面默认配置文件
-
 
 以 Arch Linux 为列：
 sudo pacman -S openbox openbox-themes menumaker feh tint2 conky conky-manager fcitx idesk obconf lxappearance-obconf oblogout obmenu libfm dmenu idesk idesk-extras lxterminal pcmanfm network-manager-applet pcmanfm compton transset-df xcompmgr volumeicon xscreensaver-arch-logo fcitx-sogoupinyin archlinux-xdg-menu l3afpad geany geany-plugins xwinwrap gmrun dmenu obkey-git  epdfview leafpad 
@@ -42,3 +41,5 @@ Background.Delay: 1	# 每一分钟自动换壁纸
 Background.Source: ~/.config/openbox/Backgrounds/	# 壁纸路径
 Background.File: 	# 这里留空
 可以做个程序图标放到桌面上，甚至某个人物素材
+
+备注：这里的大部分东西，算是盗窃别人的成果，特别是壁纸，来源不清楚，个人不建议私人牟利，如果你觉得你的利益受到了伤害，请在github项目新建一个提问，我看到了，自然会删除相关的东西。对于tint2的东西吧，里面有我个人自定义添加的东西，希望大家喜欢。

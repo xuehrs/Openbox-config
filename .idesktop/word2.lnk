@@ -1,0 +1,11 @@
+table Icon
+  Caption: 
+  Icon: /home/lihaidong/.idesktop/Pictures/word2.png
+  Width: 98
+  Height: 120
+  X: 240
+  Y: 293
+  Command[0]: 
+  Command[1]: idesktool word2.lnk
+end
+

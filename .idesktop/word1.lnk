@@ -1,0 +1,11 @@
+table Icon
+  Caption: 
+  Icon: /home/lihaidong/.idesktop/Pictures/word1.png
+  Width: 100
+  Height: 100
+  X: 71
+  Y: 283
+  Command[0]: 
+  Command[1]: idesktool word1.lnk
+end
+

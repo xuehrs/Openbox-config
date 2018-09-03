@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openbox_menu xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/  file:///usr/share/openbox/menu.xsd">
+	<menu id="root-menu" label="Openbox 3.5">
+		<item label="超级终端">
+			<action name="Execute">
+				<execute>terminator</execute>
+			</action>
+		</item>
+		<item label="观察世界">
+			<action name="Execute">
+				<execute>chromium</execute>
+			</action>
+		</item>
+		<item label="文件管理器">
+			<action name="Execute">
+				<execute>thunar</execute>
+			</action>
+		</item>
+		<item label="重启Openbox框架">
+			<action name="Execute">
+				<execute>openbox 
+--restart</execute>
+			</action>
+		</item>
+		<item label="重载Openbox配置">
+			<action name="Execute">
+				<execute>openbox --reconfigure</execute>
+			</action>
+		</item>
+		<separator/>
+		<menu execute="xdg_menu --format  openbox3-pipe --root-menu /etc/xdg/menus/arch-applications.menu" id="applications" label="菜单列表"/>
+		<menu id="root-menu-784059" label="transset-df调节窗口透明度">
+			<item label="transset-df 0.50">
+				<action name="Execute">
+					<execute>transset-df 0.50</execute>
+				</action>
+			</item>
+			<item label="transset-df 0.60">
+				<action name="Execute">
+					<execute>transset-df 0.60</execute>
+				</action>
+			</item>
+			<item label="transset-df 0.70">
+				<action name="Execute">
+					<execute>transset-df 0.70</execute>
+				</action>
+			</item>
+			<item label="transset-df 0.80">
+				<action name="Execute">
+					<execute>transset-df 0.80</execute>
+				</action>
+			</item>
+			<item label="transset-df 0.87">
+				<action name="Execute">
+					<execute>transset-df 0.87</execute>
+				</action>
+			</item>
+			<item label="transset-df 1.00">
+				<action name="Execute">
+					<execute>transset-df 1.00</execute>
+				</action>
+			</item>
+		</menu>
+		<openbox_menu>
+			<menu execute="/usr/bin/obmenu-generator -i -p -c" id="root-menu" label="OpenBox 3"> </menu>
+		</openbox_menu>
+		<menu id="root-menu-settings" label="Openbox编辑器">
+			<item label="aurostart 编辑">
+				<action name="Execute">
+					<execute>mousepad ~/.config/openbox/autostart</execute>
+				</action>
+			</item>
+			<item label="conky 配置管理器">
+				<action name="Execute">
+					<execute>conky-manager</execute>
+				</action>
+			</item>
+			<item label="xscreensaver 配置屏幕保护设置">
+				<action name="Execute">
+					<execute>xscreensaver-demo</execute>
+				</action>
+			</item>
+			<item label="Obapps 配置应用程序设置">
+				<action name="Execute">
+					<execute>obapps</execute>
+				</action>
+			</item>
+			<item label="Obconf  窗口管理器配置工具">
+				<action name="Execute">
+					<execute>obconf</execute>
+				</action>
+			</item>
+			<item label="Obkey 配置键盘快捷键">
+				<action name="Execute">
+					<execute>obkey</execute>
+				</action>
+			</item>
+			<item label="Obmenu  右键菜单编辑器">
+				<action name="Execute">
+					<execute>obmenu</execute>
+				</action>
+			</item>
+			<item label="openbox-edit">
+				<action name="Execute">
+					<execute>mousepad ~/openbox/Openbox-config/README.md</execute>
+				</action>
+			</item>
+			<item label="Idesktool Idesk工具箱">
+				<action name="Execute">
+					<execute>idesktool</execute>
+				</action>
+			</item>
+			<item label="Lxappearance 颜色、主题、图标">
+				<action name="Execute">
+					<execute>lxappearance</execute>
+				</action>
+			</item>
+			<item label="Tint2conf 系统面板编辑器">
+				<action name="Execute">
+					<execute>tint2conf</execute>
+				</action>
+			</item>
+		</menu>
+		<menu id="Exit" label="Exit Menu">
+			<item label="锁屏">
+				<action name="Execute">
+					<execute>xscreensaver-command 
+--lock</execute>
+				</action>
+			</item>
+			<item label="退出">
+				<action name="Execute">
+					<execute>openbox --exit</execute>
+				</action>
+			</item>
+			<item label="关机">
+				<action name="Execute">
+					<execute>systemctl poweroff</execute>
+				</action>
+			</item>
+			<item label="重启">
+				<action name="Execute">
+					<execute>systemctl 
+reboot</execute>
+				</action>
+			</item>
+			<item label="断电">
+				<action name="Execute">
+					<execute>poweroff</execute>
+				</action>
+			</item>
+			<item label="冬眠">
+				<action name="Execute">
+					<execute>systemctl hibernate</execute>
+				</action>
+			</item>
+			<item label="暂停休眠">
+				<action name="Execute">
+					<execute>systemctl suspend-then-hibernate</execute>
+				</action>
+			</item>
+			<item label="混合睡眠">
+				<action name="Execute">
+					<execute>systemctl 
+hybrid-sleep</execute>
+				</action>
+			</item>
+		</menu>
+	</menu>
+</openbox_menu>

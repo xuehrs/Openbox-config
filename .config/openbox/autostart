@@ -1,0 +1,82 @@
+#
+# These things are run when an Openbox X Session is started.
+# You may place a similar script in $HOME/.config/openbox/autostart
+# to run user-specific things.
+#
+
+# If you want to use GNOME config tools...
+#
+#if test -x /usr/lib/openbox/gnome-settings-daemon >/dev/null; then
+#  /usr/lib/openbox/gnome-settings-daemon &
+#elif which gnome-settings-daemon >/dev/null 2>&1; then
+#  gnome-settings-daemon &
+#fi
+
+# If you want to use XFCE config tools...
+#
+#xfce-mcs-manager &
+
+
+# 使用XFCE配置工具
+#(sleep 5 && xfce-mcs-manager) &	# 有menu就够了，alt+f3调用xfce设置相关工具
+
+# 设置默认开机声音 alsa，如果无法解决问题可以试试安装gnome-alsamixer
+/usr/bin/amixer sset Master Mono 90% unmute  &> /dev/null
+/usr/bin/amixer sset 'Master' 90% unmute  &> /dev/null
+/usr/bin/amixer sset 'Headphone' 90% unmute &> /dev/null
+/usr/bin/amixer sset 'Speaker' 90% unmute &> /dev/null
+/usr/bin/amixer sset 'PCM' 90% unmute &> /dev/null
+/usr/bin/amixer sset 'Mic Boost' 90% unmute &> /dev/null
+/usr/bin/amixer sset 'IEC958' 90% unmute &> /dev/null
+/usr/bin/amixer sset 'Beep' 90% unmute &> /dev/null
+/usr/bin/amixer sset 'Capture' 90% unmute &> /dev/null
+/usr/bin/amixer sset 'Auto-Mute Mode' 90% unmute &> /dev/null
+/usr/bin/amixer sset 'Internal Mic Boost' 90% unmute &> /dev/null	# 这个设置为0%可以解决耳机电流声音
+
+# 面板，安装tint2
+(sleep 2 && tint2) &
+
+# 设置壁纸，安装feh或者xwinwrap或者idesk
+#(sleep 2 && feh --bg-scale ~/.config/openbox/Backgrounds/wallhaven-661501.jpg) &	# 强制拉伸至边缘，会失真，美女变胖子
+#(sleep 2 && feh --randomize --bg-fill ~/.config/openbox/Backgrounds/*) &	# 文件夹随机背景图片
+#(sleep 2 && feh --bg-fill ~/.config/openbox/Backgrounds/wallhaven-661501.jpg) &	# 按比例拉伸，充满屏幕，可能会丢失一部分
+#(sleep 2 && feh --randomize --bg-fill ~/.config/openbox/Backgrounds/*) &	# 随机该图片里的壁纸，每次重登录会生效，除非定时更新
+#(sleep 2 && xwinwrap -b -fs -sp -fs -nf -ov  -- /usr/lib/xscreensaver/glslideshow -root -window-id WID) &
+
+# 根据需要启用
+#(sleep 2 && xbacklight -set 100) &	# 设置背光灯亮度为100（最亮）
+(sleep 2 && /usr/bin/synclient TouchpadOff=1) &	# 关闭触摸板
+#(sleep 2 && setxkbmap us) &	# 使用英语美国键盘
+
+# 启动图标相关，不然有部分应用没图标，可以设置GIF动态图片当桌面
+(sleep 3 && idesk) &
+
+# 屏幕系统统计，安装conky
+(sleep 2 && conky) &
+
+#启动输入法相关，安装fcitx-sogoupinyin
+(sleep 1s && fcitx-autostart) &
+#(sleep 1s && sogou-autostart) &	# 保留一个就好了，这个不是必须的
+
+#启动网络管理器的小程序，tint2显示NetworkManager图标，安装NetworkManager
+(sleep 3s && nm-applet) &
+
+# 文件管理器模式，安装pcmanfm
+(sleep 3 && pcmanfm -d) &
+
+# X compositor合成效果，可以解决显示撕裂问题的，让openbox有透明等特效功能，可以自己设置参数，详情看帮助,安装compton或者xcompmgr
+#(sleep 1 && compton -b) &
+(sleep 1 && xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55) &		# 可能有部分重影，暂时无法解决，请用最下面的东西
+#(sleep 1 && compton -cCGfF -o 0.38 -O 200 -I 200 -t 0 -l 0 -r 3 -D2 -m 0.88) &
+#(sleep 1 && xcompmgr -Ss -n -Cc -fF -I-10 -O-10 -D1 -t-3 -l-4 -r4) &		# 找不到来源
+
+# tint2显示音量活动图标，控制音量的，安装volumeicon
+(sleep 4 && volumeicon) &
+#(sleep 4 && obmixer) &
+
+# 启动一个程序，打开X中的numlock（在X服务器启动后），安装numlockx
+#(sleep 4 && numlockx) &	# 本人电脑已经使用登录管理器自动开启小键盘数字键
+
+#启动X Window系统的屏幕保护程序和锁定器，安装xscreensaver或者xscreensaver-arch-logo
+xscreensaver -no-splash &
+#/usr/lib/xscreensaver/glslideshow -root &	#该设置好像无效！可能与compositor冲突！

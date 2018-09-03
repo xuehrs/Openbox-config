@@ -1,0 +1,9 @@
+table Icon
+  Caption: 
+  Icon: /home/lihaidong/.idesktop/Icons/netease-cloud-music.png
+  X: 285
+  Y: 457
+  Command[0]: netease-cloud-music
+  Command[1]: idesktool netease-cloud-music.lnk
+end
+
